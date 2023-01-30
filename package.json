@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "keywords": [
     "Chuck Norris",
@@ -19,14 +19,11 @@
   "author": "Adam Shaffer",
   "license": "MIT",
   "dependencies": {
-    "dot-env": "^0.0.1",
+    "dotenv": "^0.0.1",
     "express": "^4.18.2",
     "nodemon": "^2.0.20"
   },
   "engines": {
     "node": "18.x"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
   }
 }

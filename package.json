@@ -19,6 +19,7 @@
   "author": "Adam Shaffer",
   "license": "MIT",
   "dependencies": {
+    "dot-env": "^0.0.1",
     "express": "^4.18.2"
   },
   "engines": {

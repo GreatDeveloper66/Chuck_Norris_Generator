@@ -11,7 +11,7 @@
     "Random Generator"
   ],
   "author": "Adam Shaffer",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2"
   },

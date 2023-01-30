@@ -25,4 +25,4 @@ app.listen(port, () => {
     console.log(`app is listening at http://localhost:${port}`)
 })
 
-app.post('/', (req,res) => res.json("App is deployed"))
+app.get('/', (req,res) => res.json("App is deployed"))

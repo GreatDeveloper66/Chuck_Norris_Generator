@@ -1,7 +1,7 @@
 import express from 'express'
 import * as dotenv from 'dotenv'
 dotenv.config()
-//import fetch from 'node-fetch'
+import fetch from 'node-fetch'
 
 /*constants*/
 const app = express()
@@ -20,11 +20,21 @@ const options = {
 };
 
 /*set up server*/
-/*
+
 app.use(express.static('public'))
-*/
+
+
+
 app.listen(port, () => {
     console.log(`app is listening at http://localhost:${port}`)
 })
 
-app.get('/', (req,res) => res.json("App is deployed"))
+/*app.get('/', (req,res) => res.json("App is deployed"))*/
+
+app.get('/chucknorrisrandomjoke', async (request, response) => {
+
+  const fetchAPI = await fetch(url,options)
+  const chuckNorrisResponse = await fetchAPI.json()
+  response.json(chuckNorrisResponse)
+})
+

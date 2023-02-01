@@ -7,9 +7,9 @@ import fetch from 'node-fetch'
 const app = express()
 const port = process.env.PORT
 
-const api_key = process.env.XRapidAPIKey || '4ab01de73bmsh006c80b8b6318a5p1ab665jsndd0b450de299'
-const api_host = process.env.XRapidAPIHost || 'matchilling-chuck-norris-jokes-v1.p.rapidapi.com'
-const url = process.env.API_URL || 'https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random'
+const api_key = process.env.XRapidAPIKey 
+const api_host = process.env.XRapidAPIHost 
+const url = process.env.API_URL
 const options = {
   method: 'GET',
   headers: {

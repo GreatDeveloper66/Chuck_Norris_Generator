@@ -24,7 +24,6 @@ const options = {
 app.use(express.static('public'))
 
 
-
 app.listen(port, () => {
     console.log(`app is listening at http://localhost:${port}`)
 })

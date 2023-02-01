@@ -3,3 +3,4 @@ package-lock.json
 .env
 npm-debug.log
 .DS_Store
+.love

@@ -1,4 +1,7 @@
 import { Component } from 'react'
+import { Container } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
 
 class ChuckNorris extends Component {
     constructor(props) {
@@ -11,9 +14,16 @@ class ChuckNorris extends Component {
     }
 
     render() {
-        return (<div>
-            
-        </div>)
+        return (
+            <Container>
+                <Row className="justify-content-md-center">
+                    <Col xs lg="2">
+                        
+                    </Col>
+                </Row>
+
+            </Container>    
+        )
            
         
     }

@@ -39,7 +39,7 @@ class ChuckNorris extends Component {
                 <Row className="justify-content-md-center">
                     <Col xs lg="2">
                         <Card>
-                            <Card.Img variant="top" src="{this.state.}" alt="Card Img Top" id="chuckNorrisImage" />
+                            <Card.Img variant="top" src="{this.state.imageSrc}" alt="Card Img Top" id="chuckNorrisImage" />
                             <Card.Body>
                                 <Card.Title>Chuck Norris Generator</Card.Title>
                                 <Card.Text id="chuckNorrisQuote">

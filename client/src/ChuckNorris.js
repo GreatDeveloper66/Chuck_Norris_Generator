@@ -27,8 +27,8 @@ export class ChuckNorris extends Component {
     }
 
     newQuote() {
-        this.newRandom()
-        this.newNorrisQuote()
+        newRandom()
+        newNorrisQuote()
     }
 
     render() {

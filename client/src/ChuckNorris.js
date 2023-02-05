@@ -18,7 +18,16 @@ class ChuckNorris extends Component {
             <Container>
                 <Row className="justify-content-md-center">
                     <Col xs lg="2">
-                        
+                        <Card>
+                            <Card.Img variant="top" src="..." alt="Card Img Top" id="chuckNorrisImage" />
+                            <Card.Body>
+                                <Card.Title>Chuck Norris Generator</Card.Title>
+                                <Card.Text id="chuckNorrisQuote">
+
+                                </Card.Text>
+                            </Card.Body>
+
+                        </Card>
                     </Col>
                 </Row>
 

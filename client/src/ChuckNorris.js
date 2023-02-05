@@ -14,7 +14,14 @@ class ChuckNorris extends Component {
     }
 
     newRandom() {
-        this.setState({randomInt: Math.ceil(Math.random(1,10)*10)})
+        const newRandomInt = Math.ceil(Math.random(1,10)*10)
+        this.setState({randomInt: newRandomInt, imageSrc: `/images/chuck_norris/chuck-norris${newRandomInt}`})
+    }
+
+    async newNorrisQuote() {
+        const response = await fetch('/chucknorrisrandomjoke')
+        const jsonResponse = await response.json()
+        this.setState({norrisQuote: jsonResponse.value})
     }
 
 
@@ -23,7 +30,7 @@ class ChuckNorris extends Component {
 
     newQuote() {
         this.newRandom()
-        this.setState({})
+        this.newNorrisQuote()
     }
 
     render() {
@@ -32,11 +39,11 @@ class ChuckNorris extends Component {
                 <Row className="justify-content-md-center">
                     <Col xs lg="2">
                         <Card>
-                            <Card.Img variant="top" src="..." alt="Card Img Top" id="chuckNorrisImage" />
+                            <Card.Img variant="top" src="{this.state.}" alt="Card Img Top" id="chuckNorrisImage" />
                             <Card.Body>
                                 <Card.Title>Chuck Norris Generator</Card.Title>
                                 <Card.Text id="chuckNorrisQuote">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content
+                                    {this.state.norrisQuote}
                                 </Card.Text>
                                 <Button variant="primary" id="refreshButton" onClick={this.newQuote}></Button>
                             </Card.Body>

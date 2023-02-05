@@ -2,8 +2,10 @@ import { Component } from 'react'
 import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
-class ChuckNorris extends Component {
+export class ChuckNorris extends Component {
     constructor(props) {
         super(props)
         this.state = { 

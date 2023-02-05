@@ -23,19 +23,23 @@ const options = {
 
 //app.use(express.static('public'))
 
-app.use(express.static('client/build'))
-
-
-app.listen(port, () => {
-    console.log(`app is listening at http://localhost:${port}`)
-})
-
-/*app.get('/', (req,res) => res.json("App is deployed"))*/
-
 app.get('/chucknorrisrandomjoke', async (request, response) => {
 
   const fetchAPI = await fetch(url,options)
   const chuckNorrisResponse = await fetchAPI.json()
   response.json(chuckNorrisResponse)
 })
+
+app.listen(port, () => {
+  console.log(`app is listening at http://localhost:${port}`)
+})
+
+app.use(express.static('client/build'))
+
+
+
+
+/*app.get('/', (req,res) => res.json("App is deployed"))*/
+
+
 

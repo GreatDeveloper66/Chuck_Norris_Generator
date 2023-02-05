@@ -19,14 +19,10 @@ class ChuckNorris extends Component {
     }
 
     async newNorrisQuote() {
-        const response = await fetch('/chucknorrisrandomjoke')
+        const response = await fetch('http://localhost:5000/chucknorrisrandomjoke')
         const jsonResponse = await response.json()
         this.setState({norrisQuote: jsonResponse.value})
     }
-
-
-
-
 
     newQuote() {
         this.newRandom()

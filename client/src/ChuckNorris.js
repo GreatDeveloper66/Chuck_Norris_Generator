@@ -6,11 +6,24 @@ import { Col } from 'react-bootstrap'
 class ChuckNorris extends Component {
     constructor(props) {
         super(props)
-        this.state = { randomInt: 1 }
+        this.state = { 
+                        randomInt: 1, 
+                        norrisQuote: "Chuck Norris is the only person who can win a chess game in one move.",
+                        imageSrc: `/images/chuck_norris/chuck-norris1.jpg`
+                    }
     }
 
     newRandom() {
-        this.setState({randomInt: Math.floor(Math.random() * 10)})
+        this.setState({randomInt: Math.ceil(Math.random(1,10)*10)})
+    }
+
+
+
+
+
+    newQuote() {
+        this.newRandom()
+        this.setState({})
     }
 
     render() {
@@ -23,8 +36,9 @@ class ChuckNorris extends Component {
                             <Card.Body>
                                 <Card.Title>Chuck Norris Generator</Card.Title>
                                 <Card.Text id="chuckNorrisQuote">
-
+                                    Some quick example text to build on the card title and make up the bulk of the card's content
                                 </Card.Text>
+                                <Button variant="primary" id="refreshButton" onClick={this.newQuote}></Button>
                             </Card.Body>
 
                         </Card>
@@ -52,6 +66,32 @@ class ChuckNorris extends Component {
             </div>
         </div>
       </div>
+
+      async function getChuckNorrisQuote() {
+    const response = await fetch('/chucknorrisrandomjoke')
+    const jsonResponse = await response.json()
+    console.log(jsonResponse)
+    const fact = jsonResponse.value
+    
+
+    document.getElementById("chuckNorrisQuote").innerHTML = fact
+    const randNum = Math.ceil(Math.random(1,10)*10)
+    console.log(randNum)
+    document.getElementById("chuckNorrisImage").src=`/images/chuck_norris/chuck-norris${randNum}.jpg`
+    
+}
+
+window.addEventListener("load", event => {
+    getChuckNorrisQuote()
+    document.getElementById("refreshButton").addEventListener("click", () => {
+        getChuckNorrisQuote()
+    })
+    
+
+})
+
+
+
       */
 
 

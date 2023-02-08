@@ -13,6 +13,9 @@ export class ChuckNorris extends Component {
                         norrisQuote: "Chuck Norris is the only person who can win a chess game in one move.",
                         imageSrc: `/images/chuck_norris/chuck-norris1.jpg`
                     }
+        this.newRandom = this.newRandom.bind(this)
+        this.newNorrisQuote = this.newNorrisQuote.bind(this)
+        this.newQuote = this.newQuote.bind(this)
     }
 
     newRandom() {

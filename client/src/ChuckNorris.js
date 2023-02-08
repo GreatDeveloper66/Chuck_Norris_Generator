@@ -45,11 +45,9 @@ export class ChuckNorris extends Component {
                                 </Card.Text>
                                 <Button variant="primary" id="refreshButton" onClick={this.newQuote}>Refresh Chuck Norris Quote</Button>
                             </Card.Body>
-
                         </Card>
                     </Col>
                 </Row>
-
             </Container>    
         )
            

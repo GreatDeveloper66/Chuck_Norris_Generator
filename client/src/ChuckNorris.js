@@ -17,18 +17,18 @@ export class ChuckNorris extends Component {
 
     newRandom() {
         const newRandomInt = Math.ceil(Math.random(1,10)*10)
-        this.setState({randomInt: newRandomInt, imageSrc: `/images/chuck_norris/chuck-norris${newRandomInt}`})
+        this.setState({randomInt: newRandomInt, imageSrc: `./images/chuck_norris/chuck-norris${newRandomInt}`})
     }
 
     async newNorrisQuote() {
-        const response = await fetch('http://localhost:5000/chucknorrisrandomjoke')
+        const response = await fetch('/chucknorrisrandomjoke')
         const jsonResponse = await response.json()
         this.setState({norrisQuote: jsonResponse.value})
     }
 
     newQuote() {
-        newRandom()
-        newNorrisQuote()
+        this.newRandom()
+        this.newNorrisQuote()
     }
 
     render() {
@@ -43,7 +43,7 @@ export class ChuckNorris extends Component {
                                 <Card.Text id="chuckNorrisQuote">
                                     {this.state.norrisQuote}
                                 </Card.Text>
-                                <Button variant="primary" id="refreshButton" onClick={this.newQuote}></Button>
+                                <Button variant="primary" id="refreshButton" onClick={this.newQuote}>Refresh Chuck Norris Quote</Button>
                             </Card.Body>
 
                         </Card>

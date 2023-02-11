@@ -4,6 +4,19 @@ import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
+import CNImage1 from "./images/chuck_norris/chuck-norris1.jpg"
+import CNImage2 from "./images/chuck_norris/chuck-norris2.jpg"
+import CNImage3 from "./images/chuck_norris/chuck-norris3.jpg"
+import CNImage4 from "./images/chuck_norris/chuck-norris4.jpg"
+import CNImage5 from "./images/chuck_norris/chuck-norris5.jpg"
+import CNImage6 from "./images/chuck_norris/chuck-norris6.jpg"
+import CNImage7 from "./images/chuck_norris/chuck-norris7.jpg"
+import CNImage8 from "./images/chuck_norris/chuck-norris8.jpg"
+import CNImage9 from "./images/chuck_norris/chuck-norris9.jpg"
+import CNImage10 from "./images/chuck_norris/chuck-norris10.jpg"
+
+
+
 
 export class ChuckNorris extends Component {
     constructor(props) {
@@ -11,16 +24,20 @@ export class ChuckNorris extends Component {
         this.state = { 
                         randomInt: 1, 
                         norrisQuote: "Chuck Norris is the only person who can win a chess game in one move.",
-                        imageSrc: `/images/chuck_norris/chuck-norris1.jpg`
+                        imageSrc: CNImage1
                     }
         this.newRandom = this.newRandom.bind(this)
         this.newNorrisQuote = this.newNorrisQuote.bind(this)
         this.newQuote = this.newQuote.bind(this)
+        this.imageStrings = [
+            CNImage1,CNImage2,CNImage3,CNImage4,CNImage5,CNImage6,CNImage7,CNImage8,CNImage9,CNImage10
+        ]
     }
 
     newRandom() {
         const newRandomInt = Math.ceil(Math.random(1,10)*10)
-        this.setState({randomInt: newRandomInt, imageSrc: `./images/chuck_norris/chuck-norris${newRandomInt}`})
+        const imageLink = this.imageStrings[newRandomInt]
+        this.setState({randomInt: newRandomInt, imageSrc: imageLink})
     }
 
     async newNorrisQuote() {
@@ -40,7 +57,7 @@ export class ChuckNorris extends Component {
                 <Row className="justify-content-md-center">
                     <Col xs lg="2">
                         <Card>
-                            <Card.Img variant="top" src="{this.state.imageSrc}" alt="Card Img Top" id="chuckNorrisImage" />
+                            <Card.Img variant="top" src={this.state.imageSrc} alt="Card Img Top" id="chuckNorrisImage" />
                             <Card.Body>
                                 <Card.Title>Chuck Norris Generator</Card.Title>
                                 <Card.Text id="chuckNorrisQuote">

@@ -1,4 +1,3 @@
-import { Component } from 'react'
 import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
@@ -16,8 +15,48 @@ import CNImage9 from "./images/chuck_norris/chuck-norris9.jpg"
 import CNImage10 from "./images/chuck_norris/chuck-norris10.jpg"
 
 
+function ChuckNorris() {
+    const [randomInt, setRandomint] = useState(1)
+    const [norrisQuote, setNorrisQuote ] = useState("Chuck Norris is the only person who can win a chess game in one move.")
+    const [imageSrc, setImageSrc ] = useState(CNImage1)
+    const imageStrings = [CNImage1,CNImage2,CNImage3,CNImage4,CNImage5,CNImage6,CNImage7,CNImage8,CNImage9,CNImage10]
+
+    
+    useEffect(() => {
+        fetch('/chucknorrisrandomjoke')
+            .then(response => response.json())
+            .then(data => {
+                setNorrisQuote(data)
+                setImageSrc(imageStrings[randomInt])
+            }).catch(err => {
+                console.log("fetch error: " + err)
+            })
+        })
+
+    return (
+        <Container>
+            <Row className="justify-content-md-center">
+                <Col xs lg="2">
+                    <Card>
+                    <Card.Img variant="top" src={imageSrc} alt="Card Img Top" id="chuckNorrisImage" />
+                        <Card.Body>
+                            <Card.Title>Chuck Norris Generator</Card.Title>
+                            <Card.Text id="chuckNorrisQuote">
+                                {norrisQuote}
+                            </Card.Text>
+                            <Button variant="primary" id="refreshButton" onClick={() => setRandomint(Math.ceil(Math.random(1,10)*10))}>Refresh Chuck Norris Quote</Button>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>    
+    )
+}
+
+export default ChuckNorris
 
 
+/*
 export class ChuckNorris extends Component {
     constructor(props) {
         super(props)
@@ -32,6 +71,25 @@ export class ChuckNorris extends Component {
         this.imageStrings = [
             CNImage1,CNImage2,CNImage3,CNImage4,CNImage5,CNImage6,CNImage7,CNImage8,CNImage9,CNImage10
         ]
+
+        return (
+            <Container>
+                <Row className="justify-content-md-center">
+                    <Col xs lg="2">
+                        <Card>
+                            <Card.Img variant="top" src={this.state.imageSrc} alt="Card Img Top" id="chuckNorrisImage" />
+                            <Card.Body>
+                                <Card.Title>Chuck Norris Generator</Card.Title>
+                                <Card.Text id="chuckNorrisQuote">
+                                    {norrisQuote}
+                                </Card.Text>
+                                <Button variant="primary" id="refreshButton" onClick={this.newQuote}>Refresh Chuck Norris Quote</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>    
+        )
     }
 
     newRandom() {

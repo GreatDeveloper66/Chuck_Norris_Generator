@@ -7,7 +7,7 @@ import { ChuckNorris } from './ChuckNorris.js'
 function App() {
   return (
     <div className="App">
-      <ChuckNorris />
+      <ChuckNorris data-testid="chuck-norris-component" />
       
     </div>
   );

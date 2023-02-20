@@ -1,17 +1,17 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import { ChuckNorris } from './ChuckNorris.js'
+//import { ChuckNorris } from './ChuckNorris.js'
 
 function App() {
   return (
     <div className="App">
-      <ChuckNorris />
-      
+      Learn React
     </div>
   );
 }
 
 export default App;
+
 /*
 <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

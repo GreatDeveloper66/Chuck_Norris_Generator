@@ -9,7 +9,7 @@ function chuckNorris() {
 
 }
 
-export 
+
 /*
 let CNImage1 = require("./images/chuck_norris/chuck-norris1.jpg")
 let CNImage2 = require("./images/chuck_norris/chuck-norris2.jpg")

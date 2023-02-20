@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.34.0",
     "flow-bin": "^0.200.0"
   }
 }

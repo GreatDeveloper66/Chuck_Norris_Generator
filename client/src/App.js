@@ -4,9 +4,23 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      Learn React
-    </div>
+    <Container>
+            <Row className="justify-content-md-center">
+                <Col xs lg="2">
+                    <Card>
+                    
+                    <img key={images[1].id} src={images[1].src}></img>
+                        <Card.Body>
+                            <Card.Title>Chuck Norris Generator</Card.Title>
+                            <Card.Text id="chuckNorrisQuote">
+                                {norrisQuote}
+                            </Card.Text>
+                            <Button variant="primary" id="refreshButton" onClick={() => setRandomint(Math.ceil(Math.random(1,10)*10))}>Refresh Chuck Norris Quote</Button>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>   
   );
 }
 

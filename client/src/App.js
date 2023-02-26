@@ -19,8 +19,10 @@ let imageArr = [CNImage1,CNImage2,CNImage3,CNImage4,CNImage5,CNImage6,CNImage7,C
 function App() {
   const [randomInt, setRandomint] = useState(1)
     const [norrisQuote, setNorrisQuote ] = useState("Chuck Norris is the only person who can win a chess game in one move.")
-    const [ images, setImages ] = useState(
-        [
+    const [ image, setImages ] = useState(
+            imageArr[randomInt]
+        
+          /*[
             {id: 1, src: CNImage1},
             {id: 2, src: CNImage2},
             {id: 3, src: CNImage3},
@@ -31,8 +33,35 @@ function App() {
             {id: 8, src: CNImage8},
             {id: 9, src: CNImage9},
             {id: 10, src: CNImage10},
-        ]
+          ]
+            */
+        
     )
+
+    async function refreshNorris() {
+      const response = await fetch('/chucknorrisrandomjoke')
+      const jsonResponse = await response.json()
+      setNorrisQuote(jsonResponse.value)
+      setRandomint(Math.ceil(Math.random(1,10)*10))
+      setImages(imageArr[randomInt])
+      /*
+      this.setState({norrisQuote: jsonResponse.value})
+      fetch('/chucknorrisrandomjoke')
+        .then(response => {
+          response.json()
+          console.log(response.json())
+        })
+        .then(data => {
+          console.log(data)
+          setNorrisQuote(data)
+          setRandomint(Math.ceil(Math.random(1,10)*10))
+          setImages(imageArr[randomInt])
+        })
+        .catch(err => {
+          console.log("error is: " + err)
+        })
+        */
+    }
 
   
   return (
@@ -40,7 +69,7 @@ function App() {
       <Container>
         <Row className="justify-content-md-center">
           <Card>
-              <Card.Img variant="top" src={images[0].src}>
+              <Card.Img variant="top" src={image}>
 
               </Card.Img>
               <Card.Body>
@@ -50,7 +79,7 @@ function App() {
                 <Card.Text id="chuckNorrisQuote">
                   {norrisQuote}
                 </Card.Text>
-                <Button variant="primary" id="refreshButton">
+                <Button variant="primary" id="refreshButton" onClick={() => refreshNorris()}>
                   Refresh Chuck Norris Quote
                 </Button>
               </Card.Body>

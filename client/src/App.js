@@ -21,16 +21,16 @@ function App() {
     const [norrisQuote, setNorrisQuote ] = useState("Chuck Norris is the only person who can win a chess game in one move.")
     const [ images, setImages ] = useState(
         [
-            {id: 1, src: './images/chuck_norris/chuck-norris1.jpg'},
-            {id: 2, src: './images/chuck_norris/chuck-norris2.jpg'},
-            {id: 3, src: './images/chuck_norris/chuck-norris3.jpg'},
-            {id: 4, src: './images/chuck_norris/chuck-norris4.jpg'},
-            {id: 5, src: './images/chuck_norris/chuck-norris5.jpg'},
-            {id: 6, src: './images/chuck_norris/chuck-norris6.jpg'},
-            {id: 7, src: './images/chuck_norris/chuck-norris7.jpg'},
-            {id: 8, src: './images/chuck_norris/chuck-norris8.jpg'},
-            {id: 9, src: './images/chuck_norris/chuck-norris9.jpg'},
-            {id: 10, src: './images/chuck_norris/chuck-norris10.jpg'},
+            {id: 1, src: CNImage1},
+            {id: 2, src: CNImage2},
+            {id: 3, src: CNImage3},
+            {id: 4, src: CNImage4},
+            {id: 5, src: CNImage5},
+            {id: 6, src: CNImage6},
+            {id: 7, src: CNImage7},
+            {id: 8, src: CNImage8},
+            {id: 9, src: CNImage9},
+            {id: 10, src: CNImage10},
         ]
     )
 
@@ -40,7 +40,7 @@ function App() {
       <Container>
         <Row className="justify-content-md-center">
           <Card>
-              <Card.Img variant="top" src={CNImage1}>
+              <Card.Img variant="top" src={images[0].src}>
 
               </Card.Img>
               <Card.Body>

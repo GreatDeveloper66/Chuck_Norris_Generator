@@ -15,28 +15,12 @@ let CNImage9 = require("./images/chuck_norris/chuck-norris9.jpg")
 let CNImage10 = require("./images/chuck_norris/chuck-norris10.jpg")
 
 let imageArr = [CNImage1,CNImage2,CNImage3,CNImage4,CNImage5,CNImage6,CNImage7,CNImage8,CNImage9,CNImage10]
+let chuckNorrisCards = []
 
 function App() {
   const [randomInt, setRandomint] = useState(1)
     const [norrisQuote, setNorrisQuote ] = useState("Chuck Norris is the only person who can win a chess game in one move.")
-    const [ image, setImages ] = useState(
-            imageArr[randomInt]
-        
-          /*[
-            {id: 1, src: CNImage1},
-            {id: 2, src: CNImage2},
-            {id: 3, src: CNImage3},
-            {id: 4, src: CNImage4},
-            {id: 5, src: CNImage5},
-            {id: 6, src: CNImage6},
-            {id: 7, src: CNImage7},
-            {id: 8, src: CNImage8},
-            {id: 9, src: CNImage9},
-            {id: 10, src: CNImage10},
-          ]
-            */
-        
-    )
+    const [ image, setImages ] = useState(imageArr[randomInt])
 
     async function refreshNorris() {
       const response = await fetch('/chucknorrisrandomjoke')
@@ -44,23 +28,10 @@ function App() {
       setNorrisQuote(jsonResponse.value)
       setRandomint(Math.ceil(Math.random(1,10)*10))
       setImages(imageArr[randomInt])
-      /*
-      this.setState({norrisQuote: jsonResponse.value})
-      fetch('/chucknorrisrandomjoke')
-        .then(response => {
-          response.json()
-          console.log(response.json())
-        })
-        .then(data => {
-          console.log(data)
-          setNorrisQuote(data)
-          setRandomint(Math.ceil(Math.random(1,10)*10))
-          setImages(imageArr[randomInt])
-        })
-        .catch(err => {
-          console.log("error is: " + err)
-        })
-        */
+    }
+
+    function saveChuckNorrisCard() {
+      chuckNorrisCards.push({norrisQuote, image})
     }
 
   
@@ -69,14 +40,14 @@ function App() {
       <Container>
         <Row className="justify-content-md-center">
           <Card>
-              <Card.Img variant="top" src={image}>
+              <Card.Img variant="top" src={image} onClick={() => saveChuckNorrisCard()}>
 
               </Card.Img>
               <Card.Body>
                 <Card.Title>
                   Chuck Norris Generator
                 </Card.Title>
-                <Card.Text id="chuckNorrisQuote">
+                <Card.Text id="chuckNorrisQuote" onClick={() => saveChuckNorrisCard()}>
                   {norrisQuote}
                 </Card.Text>
                 <Button variant="primary" id="refreshButton" onClick={() => refreshNorris()}>

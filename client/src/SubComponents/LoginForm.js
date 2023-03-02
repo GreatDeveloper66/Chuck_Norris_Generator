@@ -1,45 +1,60 @@
 import React, { useState } from 'react';
+import { Form, Button, Alert, Container, Row, Col } from 'react-bootstrap';
+
+const styles = {
+  formContainer: {
+    backgroundColor: '#F9F9F9',
+    padding: '20px',
+  },
+};
+
 
 function LoginForm() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleSubmit = event => {
+    event.preventDefault()
+    // Send form data to server to log in user
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+  const handleUsernameChange = event => {
+    event.preventDefault()
+    setUsername(event.value)
+  }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    // Authenticate the user
-  };
+  const handlePasswordChange = event => {
+    event.preventDefault()
+    setPassword(event.value)
+  }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={handleUsernameChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-      </div>
-      <button type="submit">Login</button>
-    </form>
+    <div style={styles.formContainer}>
+      <Container>
+        <Row>
+          <Col xs={12} md={6} lg={4}>
+            <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formBasicUsername">
+              <Form.Label>Username</Form.Label>
+              <Form.Control type="text" placeholder="Enter username" value={username} onChange={handleUsernameChange} />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Enter password" value={password} onChange={handlePasswordChange} />
+            </Form.Group>
+
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+            {error && <Alert variant="danger">{error}</Alert>}
+          </Form>
+         </Col>
+        </Row>
+      </Container>   
+    </div>
+    
   );
 }
 

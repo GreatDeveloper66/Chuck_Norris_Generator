@@ -1,12 +1,22 @@
 
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route, Router, Switch } from 'react-router-dom';
 //import RegisterForm from './SubComponents/RegisterForm';
 import LoginForm from './SubComponents/LoginForm';
+import ChuckNorris from './SubComponents/ChuckNorris'
 
 function App() {
   return (
-   <LoginForm />
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <LoginForm />
+        </Route>
+        <Route exact path="/chuck_norris">
+          <ChuckNorris />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

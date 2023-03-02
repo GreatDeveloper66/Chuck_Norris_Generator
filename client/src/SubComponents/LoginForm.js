@@ -15,19 +15,18 @@ function LoginForm() {
   const [error, setError] = useState('')
 
   const handleSubmit = event => {
-    event.preventDefault()
-    // Send form data to server to log in user
+    event.preventDefault();
+  
+    // TODO: Submit form
   };
-
+  
   const handleUsernameChange = event => {
-    event.preventDefault()
-    setUsername(event.value)
-  }
-
+    setUsername(event.target.value);
+  };
+  
   const handlePasswordChange = event => {
-    event.preventDefault()
-    setPassword(event.value)
-  }
+    setPassword(event.target.value);
+  };
 
   return (
     <div style={styles.formContainer}>
@@ -58,4 +57,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default LoginForm

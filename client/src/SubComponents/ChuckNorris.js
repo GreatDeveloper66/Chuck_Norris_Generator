@@ -1,18 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
 import {Button, Container, Row, Card, Table } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 
-let CNImage1 = require("./images/chuck_norris/chuck-norris1.jpg")
-let CNImage2 = require("./images/chuck_norris/chuck-norris2.jpg")
-let CNImage3 = require("./images/chuck_norris/chuck-norris3.jpg")
-let CNImage4 = require("./images/chuck_norris/chuck-norris4.jpg")
-let CNImage5 = require("./images/chuck_norris/chuck-norris4.jpg")
-let CNImage6 = require("./images/chuck_norris/chuck-norris6.jpg")
-let CNImage7 = require("./images/chuck_norris/chuck-norris7.jpg")
-let CNImage8 = require("./images/chuck_norris/chuck-norris8.jpg")
-let CNImage9 = require("./images/chuck_norris/chuck-norris9.jpg")
-let CNImage10 = require("./images/chuck_norris/chuck-norris10.jpg")
+let CNImage1 = require("../images/chuck_norris/chuck-norris1.jpg")
+let CNImage2 = require("../images/chuck_norris/chuck-norris2.jpg")
+let CNImage3 = require("../images/chuck_norris/chuck-norris3.jpg")
+let CNImage4 = require("../images/chuck_norris/chuck-norris4.jpg")
+let CNImage5 = require("../images/chuck_norris/chuck-norris4.jpg")
+let CNImage6 = require("../images/chuck_norris/chuck-norris6.jpg")
+let CNImage7 = require("../images/chuck_norris/chuck-norris7.jpg")
+let CNImage8 = require("../images/chuck_norris/chuck-norris8.jpg")
+let CNImage9 = require("../images/chuck_norris/chuck-norris9.jpg")
+let CNImage10 = require("../images/chuck_norris/chuck-norris10.jpg")
 
 let imageArr = [CNImage1,CNImage2,CNImage3,CNImage4,CNImage5,CNImage6,CNImage7,CNImage8,CNImage9,CNImage10]
 

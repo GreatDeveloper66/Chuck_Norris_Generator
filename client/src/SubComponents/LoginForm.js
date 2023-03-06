@@ -12,6 +12,7 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
+import { useNavigate } from 'react-router-dom'
 
 function LoginForm() {
 
@@ -23,6 +24,9 @@ function LoginForm() {
   const [usernameRegister, setUsernameRegister ] = useState('')
   const [ emailRegister, setEmailRegister ] = useState('')
   const [ passwordRegister , setPasswordRegister ] = useState('')  
+
+  let navigate = useNavigate()
+  
 
   const handleEmailLoginChange = event => {
     event.preventDefault()
@@ -52,11 +56,14 @@ function LoginForm() {
   const handleSignIn = event => {
       event.preventDefault()
       console.log(" Email: " + emailLogin + " " + passwordLogin)
+      navigate('ChuckNorris')
   }
 
   const handleSignUp = event => {
     event.preventDefault()
     console.log("Name + " + nameRegister + "Username: + " + usernameRegister + " Email: " + emailRegister + " Password:  " + passwordRegister + " ")
+    navigate('ChuckNorris')
+    
 }
 
 
@@ -119,8 +126,7 @@ function LoginForm() {
             <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
             <a href="!#">Forgot password?</a>
           </div>
-
-          <MDBBtn className="mb-4 w-100" onClick={ handleSignIn }>Sign in</MDBBtn>
+            <MDBBtn className="mb-4 w-100" onClick={ handleSignIn }>Sign in</MDBBtn>
           <p className="text-center">Not a member? <a href="#!">Register</a></p>
 
         </MDBTabsPane>
@@ -159,8 +165,7 @@ function LoginForm() {
           <div className='d-flex justify-content-center mb-4'>
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
           </div>
-
-          <MDBBtn className="mb-4 w-100" onClick={ handleSignUp }>Sign up</MDBBtn>
+            <MDBBtn className="mb-4 w-100" onClick={ handleSignUp }>Sign up</MDBBtn>
 
         </MDBTabsPane>
 

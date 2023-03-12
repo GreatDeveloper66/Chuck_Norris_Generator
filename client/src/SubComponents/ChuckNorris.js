@@ -43,9 +43,9 @@ function ChuckNorris() {
   
   return (
     <div className="App">
-      <Container>
-        <Row className="justify-content-md-center">
-          <Card>
+      <Container style={{overflow: 'hidden'}}>
+        <Row className="justify-content-md-center" sm={4} md={6}>
+          <Card style={{ width: '500px', height: '500px'}}>
               <Card.Img variant="top" src={image} onClick={() => saveChuckNorrisCard()}>
 
               </Card.Img>
@@ -62,7 +62,34 @@ function ChuckNorris() {
               </Card.Body>
           </Card>
         </Row>
-        <Row className="justify-content-md-center">
+        
+        
+        
+      </Container>
+      
+    </div>
+  );
+}
+
+export default ChuckNorris;
+/*
+<header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+
+
+      <Row className="justify-content-md-center" sm={4} md={6}>
           <Table>
             <thead>
               <tr>
@@ -89,26 +116,4 @@ function ChuckNorris() {
           </Table>
           
         </Row>
-      </Container>
-      
-    </div>
-  );
-}
-
-export default ChuckNorris;
-/*
-<header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
       */

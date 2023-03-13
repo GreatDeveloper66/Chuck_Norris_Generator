@@ -1,4 +1,69 @@
-import {Button, Container, Row, Card, Table } from 'react-bootstrap'
+import { ChuckNorrisCard } from "./ChuckNorrisCard"
+import { ChuckNorrisTable } from "./ChuckNorrisTable"
+import { Container, Row, Col } from 'react-bootstrap'
+
+export const ChuckNorris = () => {
+  <div>
+    <Container>
+      <Row>
+        <Col xs={12} sm={6}>
+          <ChuckNorrisCard />
+        </Col>
+        <Col xs={12} sm={6}>
+          <ChuckNorrisTable />
+        </Col>
+      </Row>
+    </Container>
+  </div>
+}
+/*
+<header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+
+
+      <Row className="justify-content-md-center" sm={4} md={6}>
+          <Table>
+            <thead>
+              <tr>
+                <th>Chuck Norris Photo</th>
+                <th>Chuck Norris Quote</th>
+                <th>Delete</th>
+                <th>Up</th>
+                <th>Down</th>
+              </tr>
+            </thead>
+            <tbody>
+            {
+            chuckNorrisCards.map((elem) => (
+              <tr>
+                <td><img src={elem.image} alt="missing"></img></td>
+                <td>{elem.norrisQuote}</td>
+                <td><button>Delete</button></td>
+                <td><button>Up</button></td>
+                <td><button>Down</button></td>
+              </tr>
+            ))}
+
+              </tbody>
+          </Table>
+          
+        </Row>
+
+
+
+        import {Button, Container, Row, Card, Table } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 
 let CNImage1 = require("../images/chuck_norris/chuck-norris1.jpg")
@@ -71,49 +136,4 @@ function ChuckNorris() {
   );
 }
 
-export default ChuckNorris;
-/*
-<header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-
-
-      <Row className="justify-content-md-center" sm={4} md={6}>
-          <Table>
-            <thead>
-              <tr>
-                <th>Chuck Norris Photo</th>
-                <th>Chuck Norris Quote</th>
-                <th>Delete</th>
-                <th>Up</th>
-                <th>Down</th>
-              </tr>
-            </thead>
-            <tbody>
-            {
-            chuckNorrisCards.map((elem) => (
-              <tr>
-                <td><img src={elem.image} alt="missing"></img></td>
-                <td>{elem.norrisQuote}</td>
-                <td><button>Delete</button></td>
-                <td><button>Up</button></td>
-                <td><button>Down</button></td>
-              </tr>
-            ))}
-
-              </tbody>
-          </Table>
-          
-        </Row>
       */
